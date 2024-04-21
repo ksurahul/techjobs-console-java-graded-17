@@ -119,7 +119,35 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        //iterate over the ArrayList, then over the Hashmap
+        //hard coding it - this works because we know what the key value pairs are
+        //we're not supposed to worry about time complexity, but I think this would be better because fewer loops
+        //if there was added attributes, this would fail because we wouldn't have that covered below
+//        for (int i = 0; i < someJobs.size(); i++) {
+//            System.out.println("*****");
+//            System.out.println("position type: " + someJobs.ent);
+//            System.out.println("name: " + someJobs.get(i).get("name"));
+//            System.out.println("employer: " + someJobs.get(i).get("employer"));
+//            System.out.println("location: " + someJobs.get(i).get("location"));
+//            System.out.println("core competency: " + someJobs.get(i).get("core competency"));
+//            System.out.println("*****\n");
+//        }
 
-        System.out.println("printJobs is not implemented yet");
+        //iterates over the ArrayList then iterates over the HashMap
+        for (int i = 0; i < someJobs.size(); i++) {
+            System.out.println("*****");
+
+            for (Map.Entry<String, String> entry : someJobs.get(i).entrySet()) {
+                String key = entry.getKey();
+                Object value = entry.getValue();
+                System.out.println(key + ": " + value);
+            }
+            System.out.println("*****\n");
+        }
+
+        //if there are no jobs to print out
+        if (someJobs.isEmpty()) {
+            System.out.println("No jobs found");
+        }
     }
 }
