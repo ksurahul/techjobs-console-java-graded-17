@@ -100,6 +100,7 @@ public class JobData {
             //iterating values to match what the given value from above is
             for (String str : row.values()) {
                 //if the value is in the row, add it to the ArrayList jobsByValue
+                //add toLowerCase() on both sides so we don't modify the data of the actual csv
                 if (str.toLowerCase().contains(value.toLowerCase()))
                     jobsByValue.add(row);
             }
