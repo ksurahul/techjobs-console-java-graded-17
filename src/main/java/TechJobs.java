@@ -135,19 +135,19 @@ public class TechJobs {
 
         //iterates over the ArrayList then iterates over the HashMap
         for (int i = 0; i < someJobs.size(); i++) {
-            System.out.println("*****");
+            System.out.println("\n*****");
 
             for (Map.Entry<String, String> entry : someJobs.get(i).entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
                 System.out.println(key + ": " + value);
             }
-            System.out.println("*****\n");
+            System.out.println("*****");
         }
 
         //if there are no jobs to print out
         if (someJobs.isEmpty()) {
-            System.out.println("No jobs found");
+            System.out.print("No Results");
         }
     }
 }
